@@ -64,7 +64,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,
+            //スクロール方向を逆転,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -114,6 +114,18 @@
         to_setting {
             bindings = <&mo 4>;
             key-positions = <40 39>;
+        };
+
+        to0_1 {
+            bindings = <&to 0>;
+            key-positions = <13 12>;
+            layers = <5>;
+        };
+
+        to0_2 {
+            bindings = <&to 0>;
+            key-positions = <16 17>;
+            layers = <5>;
         };
     };
 
@@ -196,10 +208,10 @@
 
         Symbol+Mouse {
             bindings = <
-&kp ESC         &kp LS(SEMI)          &kp LS(SQT)       &kp LS(N5)        &kp LS(NUMBER_3)                   &mkp MB5  &kp INTERNATIONAL_1  &kp LS(EQUAL)  &kp LEFT_BRACKET  &kp MINUS
-&kp EQUAL       &kp LS(NUMBER_1)      &kp LS(NUMBER_6)  &kp LS(INT3)      &kp LS(NUMBER_4)                   &mkp MB4  &mkp LCLK            &mo 3          &mkp RCLK         &kp SQT
-&kp LEFT_SHIFT  &kp LS(LEFT_BRACKET)  &kp LS(N7)        &kp LS(NUMBER_2)  &bracket4                          &none     &kp PG_UP            &mkp MB3       &kp PG_DN         &kp SEMI
-&trans          &trans                &trans            &trans            &trans            &trans    &to 0  &trans                         &none          &none             &kp INT3
+&kp ESC         &kp LS(SEMI)          &kp LS(SQT)       &kp LS(N5)        &kp LS(NUMBER_3)                    &mkp MB5  &kp INTERNATIONAL_1  &kp LS(EQUAL)  &kp LEFT_BRACKET  &kp MINUS
+&kp EQUAL       &kp LS(NUMBER_1)      &kp LS(NUMBER_6)  &kp LS(INT3)      &kp LS(NUMBER_4)                    &mkp MB4  &mkp LCLK            &mo 3          &mkp RCLK         &kp SQT
+&kp LEFT_SHIFT  &kp LS(LEFT_BRACKET)  &kp LS(N7)        &kp LS(NUMBER_2)  &bracket4                           &none     &kp PG_UP            &mkp MB3       &kp PG_DN         &kp SEMI
+&trans          &trans                &trans            &trans            &trans            &trans    &trans  &trans                         &none          &none             &kp INT3
             >;
         };
 
@@ -210,7 +222,7 @@
 &none               &kp LG(UP_ARROW)  &kp LS(N8)             &kp LS(N9)         &bracket1                   &kp LS(LG(S))     &kp LC(PG_UP)  &none         &kp LC(PG_DN)  &kp LG(Z)
 &kp LG(LEFT_ARROW)  &kp LG(RIGHT)     &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)  &bracket2                   &kp LG(LS(LEFT))  &mkp LCLK      &kp UP_ARROW  &mkp RCLK      &kp LG(LS(RIGHT))
 &kp LEFT_SHIFT      &kp LG(DOWN)      &kp RIGHT_BRACKET      &kp BACKSLASH      &bracket3                   &kp HOME          &kp LEFT       &kp DOWN      &kp RIGHT      &kp END
-&trans              &trans            &trans                 &trans             &trans     &trans    &to 1  &trans                           &none         &none          &none
+&trans              &trans            &trans                 &trans             &trans     &trans    &to 5  &trans                           &none         &none          &none
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -231,10 +243,10 @@
 
         Settings {
             bindings = <
-&none   &none   &none   &none   &none                     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none   &none   &none   &none   &none                     &none         &none         &none         &none         &none
-&none   &none   &none   &none   &none                     &none         &none         &none         &none         &none
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                      &trans        &trans        &trans
+&none       &none           &none   &none   &none                     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&none       &none           &none   &none   &none                     &none         &none         &none         &none         &none
+&bt BT_CLR  &bt BT_CLR_ALL  &none   &none   &none                     &none         &none         &none         &none         &none
+&trans      &trans          &trans  &trans  &trans  &trans    &trans  &trans                      &trans        &trans        &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -242,12 +254,12 @@
 
         //5
 
-        SCROLL {
+        OneHand {
             bindings = <
-&trans    &kp LC(LG(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LG(RIGHT_ARROW))  &trans                    &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
-&trans    &kp LEFT_ARROW          &kp DOWN      &kp RIGHT_ARROW          &trans                    &kp KP_SLASH     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MINUS
-&kp HOME  &kp PAGE_DOWN           &kp END       &kp PAGE_UP              &trans                    &kp UNDER        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
-&trans    &trans                  &trans        &trans                   &trans  &trans    &trans  &kp NUMBER_0                   &kp NUMBER_0  &kp DOT       &kp QUESTION
+&kp TAB           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSPACE                                &mkp MB5  &none      &none     &none      &none
+&kp PERIOD        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ENTER                                    &mkp MB4  &mkp LCLK  &mo 6     &mkp RCLK  &none
+&kp NUMBER_0      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none                                        &none     &none      &mkp MB3  &none      &none
+&kp LC(NUMBER_1)  &none         &kp NUMBER_0  &none         &kp LC(NUMBER_2)  &kp LC(NUMBER_3)    &to 0  &mo 6                &none     &none      &none
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
@@ -255,12 +267,12 @@
 
         //6
 
-        WIRELESS {
+        Scroll {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans        &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &trans
-&trans        &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &bt BT_CLR
-&trans        &trans        &trans        &trans        &trans        &trans    &bootloader  &studio_unlock                &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                    &kp LS(LG(S))  &trans          &trans          &trans           &trans
+&trans  &trans  &trans  &trans  &trans                    &trans         &trans          &kp UP_ARROW    &trans           &trans
+&trans  &trans  &trans  &trans  &trans                    &trans         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                         &trans          &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
