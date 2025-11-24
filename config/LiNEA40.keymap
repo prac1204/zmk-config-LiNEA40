@@ -64,7 +64,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,
+            //スクロール方向を逆転,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -226,10 +226,10 @@
 
         OneHand {
             bindings = <
-&kp TAB           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSPACE                                &mkp MB5  &none      &none     &none      &none
-&kp PERIOD        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ENTER                                    &mkp MB4  &mkp LCLK  &mo 5     &mkp RCLK  &none
-&kp NUMBER_0      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none                                        &none     &none      &mkp MB3  &none      &none
-&kp LC(NUMBER_1)  &none         &kp NUMBER_0  &none         &kp LC(NUMBER_2)  &kp LC(NUMBER_3)    &to 0  &mo 5                &none     &none      &none
+&kp TAB            &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp BACKSPACE                                &mkp MB5  &none      &none     &none      &none
+&kp PERIOD         &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp ENTER                                    &mkp MB4  &mkp LCLK  &mo 5     &mkp RCLK  &none
+&kp NUMBER_0       &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &none                                        &none     &none      &mkp MB3  &none      &none
+&kp LC(BACKSPACE)  &kp LC(NUMBER_1)  &kp NUMBER_0  &none         &kp LC(NUMBER_2)  &kp LC(NUMBER_3)    &to 0  &mo 5                &none     &none      &none
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
